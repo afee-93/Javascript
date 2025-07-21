@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>My Colours</h2>
+    <button onclick="showtextcolors()">Show next colour</button>
+    <p id="demo"></p>
+    <script>
+        const Colours=['red','blue','yellow','green'];
+        let currentIndex=0;
+        function showtextcolors()
+        {
+            if(currentIndex<Colours.length)
+        {
+            document.getElementById("demo").innerText=Colours[currentIndex];
+            currentIndex++;
+        }
+        else
+        {
+           document.getElementById("demo").innerText="No more colours";
+        }
+        }
+
+    document.getElementById("demo").innerText=Colours[currentIndex];
+    </script>
+</body>
+</html>
