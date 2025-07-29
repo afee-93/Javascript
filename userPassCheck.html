@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+<body>
+    <label>Username : <input type="text" id="username"></label>
+    <label>Password : <input type="password" id="password"></label><br><br>
+    <button onclick="handleLogin()">Submit</button>
+    <br><br>
+    <h3 id="ErrorMsg"></h3>
+
+    <script>
+        const checkPass = (b) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Welcome");
+                }, 2000);
+            });
+        };
+
+        const handleLogin = async () => {
+            const a = document.getElementById('username').value;
+            const b = document.getElementById('password').value;
+
+            if (a==='admin' && b === '1234') {
+                document.getElementById('ErrorMsg').innerText = 'Please wait...';
+                const message = await checkPass(b);
+                document.getElementById('ErrorMsg').innerText = message;
+            } else {
+                document.getElementById('ErrorMsg').innerText = 'Sorry, cannot let you in';
+            }
+        };
+    </script>
+</body>
+</html>
